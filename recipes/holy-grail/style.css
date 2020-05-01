@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* set a global css variable so we can change the page width in 1 place */
+:root {
+  --page-max-width: 1000px;
+}
+
+html {
+  /* set height to 100% (this is the height of the screen) */
+  /* use 100% instead of "100vh" so that it works on iOS */
+  height: 100%;
+}
+
+body {
+  /* inherit a min-height from <html> (the height of the screen) */
+  min-height: 100%;
+  margin: 0;
+  /* flex column so <header>, <main> and <footer> are stacked vertically */
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+header {
+  background-color: hotpink;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.header-content {
+  max-width: var(--page-max-width);
+  /* auto margin on the left and right sides so it is positioned around the center of the page  */
+  margin: 0 auto;
+  /* some padding so content doesn't touch the edge of the screen on narrower displays */
+  padding: 0 8px;
+}
+
+main {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  /* grow to fill any extra space in <body> (body has a min-height of 100% ie the height of the screen) */
+  flex-grow: 1;
+  /* some padding so content doesn't touch the edge of the screen on narrower displays */
+  padding: 0 8px;
+}
+
+footer {
+  padding: 16px 0;
+  background-color: whitesmoke;
+}
+
+.footer-content {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  /* some padding so content doesn't touch the edge of the screen on narrower displays */
+  padding: 0 8px;
+}
