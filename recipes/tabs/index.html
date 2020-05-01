@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabs</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Accessible tabs</h1>
+    <p>Try using the keyboard</p>
+    <div id="tabsContainer">
+      <div role="tablist" aria-label="Demo Tabs">
+        <button
+          id="tab-foo"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel-foo"
+          tabindex="0"
+        >
+          Foo
+        </button>
+        <button
+          id="tab-bar"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-bar"
+          tabindex="-1"
+        >
+          Bar
+        </button>
+        <button
+          id="tab-baz"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-baz"
+          tabindex="-1"
+        >
+          Baz
+        </button>
+        <div class="tabUnderline"></div>
+      </div>
+      <div id="panel-foo" role="tabpanel" aria-labelledby="tab-foo">
+        <p>Foo tab content</p>
+      </div>
+      <div id="panel-bar" role="tabpanel" aria-labelledby="tab-bar" hidden>
+        <p>Bar tab content</p>
+      </div>
+      <div id="panel-baz" role="tabpanel" aria-labelledby="tab-baz" hidden>
+        <p>Baz tab content</p>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

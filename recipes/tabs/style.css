@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+#tabsContainer {
+  display: inline-block;
+  width: 300px;
+  border: 1px solid lightgrey;
+}
+
+[role="tablist"] {
+  display: grid;
+  /* 3 tabs therefore 3 equal-width columns */
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 4px;
+  box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.25);
+}
+
+[role="tab"] {
+  height: 30px;
+  padding: 0 8px;
+  font-size: 24px;
+  background-color: transparent;
+  border: none;
+}
+
+.tabUnderline {
+  margin-top: 4px;
+  height: 4px;
+  background-color: hotpink;
+  transition: transform 0.2s ease-out;
+}
+
+[role="tabpanel"] {
+  padding: 0 8px;
+}

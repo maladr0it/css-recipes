@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+label {
+  display: flex;
+  align-items: center;
+}
+
+/* add vertical space between the items */
+label + label {
+  margin-top: 4px;
+}
+
+/* hide the input visually, but don't give it "display: none" as it will break keyboard controls */
+input {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.circle {
+  position: relative; /* to position the dot within absolutely */
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  border: 1px solid grey;
+}
+
+/* put a dot in the middle of the circle */
+.circle::after {
+  /* center the dot within its parent */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 4px;
+  width: 4px;
+  content: "";
+  border-radius: 50%;
+  background-color: white;
+  /*  hide by default  */
+  opacity: 0;
+}
+
+.labelText {
+  margin-left: 8px;
+}
+
+/* the "~" aka general sibling combinator lets us select anything following a checked input */
+input:checked ~ .circle {
+  background-color: hotpink;
+  border-color: hotpink;
+}
+
+/* add a focus ring around the circle to assist with keyboard control */
+/* layer 2 solid shadows on top of each other in order to create the ring effect */
+input:focus ~ .circle {
+  box-shadow: 0 0 0 1px white, 0 0 0 3px cornflowerblue;
+}
+
+input:checked ~ .circle::after {
+  opacity: 1;
+}

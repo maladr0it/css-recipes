@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Rating</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Accessible star rating</h1>
+    <p>Try using it with the keyboard</p>
+
+    <fieldset>
+      <legend>Movie Rating</legend>
+      <div class="starContainer">
+        <!-- have no rating given by default, this is necessary in order to make all stars initially empty -->
+        <input
+          type="radio"
+          aria-hidden
+          name="star-rating"
+          value=""
+          checked
+          disabled
+        />
+
+        <input id="star-1" type="radio" name="star-rating" value="1" />
+        <!-- provide an aria-label since the star symbol is not descriptive -->
+        <label for="star-1" aria-label="1 star">
+          <span class="star">☆</span>
+        </label>
+
+        <input id="star-2" type="radio" name="star-rating" value="2" />
+        <label for="star-2" aria-label="2 stars">
+          <span class="star">☆</span>
+        </label>
+
+        <input id="star-3" type="radio" name="star-rating" value="3" />
+        <label for="star-3" aria-label="3 stars">
+          <span class="star">☆</span>
+        </label>
+
+        <input id="star-4" type="radio" name="star-rating" value="4" />
+        <label for="star-4" aria-label="4 stars">
+          <span class="star">☆</span>
+        </label>
+
+        <input id="star-5" type="radio" name="star-rating" value="5" />
+        <label for="star-5" aria-label="5 stars">
+          <span class="star">☆</span>
+        </label>
+      </div>
+    </fieldset>
+  </body>
+</html>

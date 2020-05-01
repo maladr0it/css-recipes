@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+label {
+  display: flex;
+  align-items: center;
+}
+
+.slider-container {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 34px;
+  /* prevent the user from accidentally selecting text when interacting with the slider */
+  user-select: none;
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.slider {
+  position: absolute;
+  display: flex;
+  align-items: center; /* center the slider knob vertically */
+  height: 100%;
+  width: 100%;
+  background-color: lightgrey;
+  border-radius: 999px;
+  transition: background-color 0.2s linear;
+  cursor: pointer;
+}
+
+.slider::before {
+  position: absolute;
+  transform: translateX(4px);
+  height: 26px;
+  width: 26px;
+  content: "";
+  border-radius: 50%;
+  background-color: white;
+  transition: transform 0.2s linear;
+}
+
+input:checked ~ .slider {
+  background-color: hotpink;
+}
+
+/* add a focus ring around the circle to assist with keyboard control */
+/* layer 2 solid shadows on top of each other in order to create the ring effect */
+input:focus ~ .slider,
+input:active ~ .slider {
+  box-shadow: 0 0 0 2px white, 0 0 0 4px cornflowerblue;
+}
+
+input:checked ~ .slider::before {
+  transform: translateX(30px);
+}
+
+.labelText {
+  font-size: 20px;
+  margin-left: 12px;
+}
