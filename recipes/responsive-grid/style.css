@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  /* fill each row with as many cells as possible, each with a minimum width of 200px and growing from there to fill up any left-over space */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* padding % (even top and bottom padding) is based off the element's width, so this will make the element square */
+  background-color: lightgrey;
+}
+
+.item-content {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 48px;
+  color: white;
+}
