@@ -30,14 +30,14 @@ header {
   background-color: hotpink;
   color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  /* some padding so content doesn't touch the edge of the screen on narrower displays */
-  padding: 0 8px;
 }
 
 .header-content {
   max-width: var(--page-max-width);
   /* auto margin on the left and right sides so it is positioned around the center of the page  */
   margin: 0 auto;
+  /* some padding so content doesn't touch the edge of the screen on narrower displays */
+  padding: 0 8px;
 }
 
 main {
@@ -52,11 +52,13 @@ main {
 
 footer {
   /* some padding so content doesn't touch the edge of the screen on narrower displays */
-  padding: 16px 8px;
+  padding: 16px 0;
   background-color: whitesmoke;
 }
 
 .footer-content {
   max-width: var(--page-max-width);
   margin: 0 auto;
+  /* some padding so content doesn't touch the edge of the screen on narrower displays */
+  padding: 0 8px;
 }
