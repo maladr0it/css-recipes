@@ -1,0 +1,152 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --page-max-width: 1000px;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.bar {
+  color: white;
+  background-color: hotpink;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.bar-content {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  /* prevent the bar content from spreading any wider than this */
+  max-width: var(--page-max-width);
+  margin: 0 auto; /* center the content inside the bar */
+  padding: 0 8px;
+}
+
+.logo {
+  height: 40px;
+  display: block; /* remove space below the image that an inilne element would have */
+}
+
+nav {
+  font-size: 18px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* remove default styling from button so it appears like a link */
+.link-button {
+  text-align: unset;
+  font-size: unset;
+  color: unset;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer; /* to indicate the element is interactive */
+}
+
+/* for screen sizes 499px or less */
+@media (max-width: 499px) {
+  .menu-container {
+    position: relative;
+    margin-left: auto; /* move as far right as possible */
+  }
+
+  .menu-button {
+    /* bars svg */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="white" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>');
+    background-origin: content-box;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: none;
+    padding: 8px;
+    height: 44px;
+    width: 44px;
+    background-color: transparent;
+  }
+
+  .menu {
+    position: absolute;
+    width: 200px;
+    right: 0;
+    padding: 12px 8px;
+    border-radius: 4px;
+    color: black;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  /* put a gap between each item in the nav list */
+  nav li + li {
+    margin-top: 8px;
+  }
+
+  .account {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 12px;
+    border-top: 1px solid lightgrey;
+    padding-top: 12px;
+  }
+
+  /* put a gap between each child of "account" */
+  .account > * + * {
+    margin-top: 8px;
+  }
+}
+
+/* for screen sizes 500px or more */
+@media (min-width: 500px) {
+  .menu-container {
+    margin-left: 16px;
+    flex-grow: 1; /* take up remaining space right of the logo */
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+    align-items: center;
+  }
+
+  /* put a gap between each item in the nav list */
+  nav li + li {
+    margin-left: 12px;
+  }
+
+  .account {
+    display: flex;
+    align-items: baseline;
+    margin-left: auto; /* move as far right as possible */
+    padding-left: 16px;
+    border-left: 1px solid white;
+  }
+
+  /* put a gap between each child of "account" */
+  .account > * + * {
+    margin-left: 12px;
+  }
+}
