@@ -13,7 +13,7 @@ body {
   font-family: sans-serif;
 }
 
-.bar {
+header {
   color: white;
   background-color: hotpink;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -34,13 +34,10 @@ body {
   display: block; /* remove space below the image that an inilne element would have */
 }
 
-nav {
-  font-size: 18px;
-}
-
 nav ul {
   margin: 0;
   padding: 0;
+  font-size: 18px;
   list-style: none;
 }
 
@@ -51,9 +48,9 @@ a {
 
 /* remove default styling from button so it appears like a link */
 .link-button {
-  text-align: unset;
-  font-size: unset;
-  color: unset;
+  text-align: inherit;
+  font-size: inherit;
+  color: inherit;
   padding: 0;
   border: none;
   background-color: transparent;
@@ -68,16 +65,17 @@ a {
   }
 
   .menu-button {
-    /* bars svg */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="white" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>');
-    background-origin: content-box;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    border: none;
-    padding: 8px;
     height: 44px;
     width: 44px;
+    padding: 8px;
+    border: none;
+    /* bars svg */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="white" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>');
+    background-origin: content-box; /* position the background within the padded area */
+    background-size: 100%;
+    background-repeat: no-repeat;
     background-color: transparent;
+    cursor: pointer; /* to indicate the element is interactive */
   }
 
   .menu {
@@ -88,7 +86,7 @@ a {
     border-radius: 4px;
     color: black;
     background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   }
 
   /* put a gap between each item in the nav list */
