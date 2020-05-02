@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --page-max-width: 1000px;
+}
+
+body {
+  /* stack <header> and <main> vertically */
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+header {
+  position: sticky;
+  top: 0; /* where the header will be positioned when it would otherwise be out of view */
+  color: white;
+  background-color: hotpink;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  padding: 0 8px;
+}
+
+.header-content {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+}
+
+main {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0 8px;
+}
