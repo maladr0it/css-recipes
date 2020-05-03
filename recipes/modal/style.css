@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --page-max-width: 1000px;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+body.fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+main {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0 8px;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+[role="dialog"] {
+  width: 100%;
+  max-width: 600px;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+[role="dialog"] header {
+  display: flex;
+  align-items: flex-start;
+}
+
+[role="dialog"] h1 {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.close-button {
+  color: hotpink;
+}
+
+.hidden {
+  display: none;
+}

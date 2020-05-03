@@ -15,7 +15,7 @@ label {
 
 /* add vertical space between the items */
 label + label {
-  margin-top: 4px;
+  margin-top: 8px;
 }
 
 /* hide the input visually, but don't give it "display: none" as it will break keyboard controls */
@@ -27,8 +27,8 @@ input {
 
 .circle {
   position: relative; /* to position the dot within absolutely */
-  height: 16px;
-  width: 16px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
   border: 1px solid grey;
 }
@@ -40,8 +40,8 @@ input {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  height: 4px;
-  width: 4px;
+  height: 6px;
+  width: 6px;
   content: "";
   border-radius: 50%;
   background-color: white;

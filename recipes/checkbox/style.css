@@ -15,7 +15,7 @@ label {
 
 /* add vertical space between the items */
 label + label {
-  margin-top: 4px;
+  margin-top: 8px;
 }
 
 /* hide the input visually, but don't give it "display: none" as it will break keyboard controls */
@@ -26,12 +26,11 @@ input {
 }
 
 .box {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   border: 1px solid grey;
   border-radius: 2px;
-  /* prevent the user from selecting text when interacting with the box */
-  user-select: none;
+  user-select: none; /* prevent the user from selecting text when interacting with the box */
 }
 
 .labelText {
@@ -44,7 +43,7 @@ input:checked ~ .box {
   border-color: hotpink;
   /* use a background image for the check-mark */
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="white" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>');
-  background-size: 10px;
+  background-size: 12px;
   background-position: center;
   background-repeat: no-repeat;
 }

@@ -17,6 +17,10 @@ body {
   line-height: 1.5;
 }
 
+#sticky-sentinel {
+  display: hidden;
+}
+
 header {
   position: sticky;
   top: 0; /* where the header will be positioned when it would otherwise be out of view */
