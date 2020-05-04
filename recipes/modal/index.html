@@ -8,7 +8,7 @@
   </head>
   <body>
     <main>
-      <h1>Modal</h1>
+      <h1>Accessible modal</h1>
       <button class="show-modal-button">Show modal</button>
       <h2>Lorem</h2>
       <p>
@@ -124,14 +124,26 @@
         vitae, varius tortor.
       </p>
     </main>
-    <div id="modal-container" aria-hidden="true" class="hidden">
+    <div id="modal-1-container" aria-hidden="true" class="hidden">
       <div class="backdrop">
         <div role="dialog" aria-labelledby="modal-label" aria-modal="true">
           <header>
             <h1 id="modal-label">Add item</h1>
-            <button class="close-button">close</button>
+            <button
+              aria-label="Close modal"
+              class="close-button"
+              data-close-button
+            >
+              &times;
+            </button>
           </header>
-          <p>I am the modal</p>
+          <form id="form-1">
+            <label><span>Name </span><input name="name" type="text" /></label>
+            <div class="form-controls">
+              <button type="submit">Submit</button>
+              <button type="button" data-close-button>Cancel</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
