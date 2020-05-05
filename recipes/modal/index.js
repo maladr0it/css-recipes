@@ -146,15 +146,16 @@ for (const button of document.querySelectorAll(".show-modal-button")) {
   button.addEventListener("click", Modal1.show);
 }
 
-const form1 = document.getElementById("form-1");
 // set up form
-form1.addEventListener("submit", function (event) {
+const form1 = document.getElementById("form-1");
+
+form1.addEventListener("submit", event => {
   event.preventDefault();
-  const formData = new FormData(this);
+  const formData = new FormData(form1);
   for (const [field, value] of formData) {
     console.log(`${field}: ${value}`);
   }
-  this.reset();
+  form1.reset();
   Modal1.hide();
 });
 
