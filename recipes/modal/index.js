@@ -109,7 +109,8 @@ function Modal(container) {
     container.classList.remove("hidden");
     // when <body> becomes fixed, the scrollbar will be removed, moving the page content slightly to the left
     // offset <body>'s content by that width with a margin to prevent this
-    scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
     document.body.style.marginRight = `${scrollbarWidth}px`;
     document.body.classList.add("fixed");
     document.body.style.top = `-${scrollTop}px`;
